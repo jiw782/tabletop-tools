@@ -6,18 +6,28 @@
  * @returns {boolean} whether the wizard can cast the spell
  */
 function canCastSpell(isSpellPrepared, hasScroll) {
-  // TODO
+  if (isSpellPrepared || hasScroll) {
+    return true;
+    // TODO
+  } else {
+    return false;
+  }
 }
 
 /**
  * A creature is hidden from an observer if it is actively hiding
  * or if the observer is not aware of it.
- * @param {boolean} hiding - whether the creature is actively hiding
+ * @param {boolean} hiding - whether the creature is actively hiding33
  * @param {boolean} aware - whether the observer is aware of the creature
  * @returns {boolean} whether the creature is hidden from the observer
  */
 function isHidden(hiding, aware) {
   // TODO
+  if (hiding || !aware) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 /**
@@ -28,9 +38,13 @@ function isHidden(hiding, aware) {
  * @returns {boolean} whether the strike hits
  */
 function doesStrikeHit(attack, ac) {
-  // TODO
+  if (attack >= ac) {
+    return true;
+  } else {
+    return false;
+    // TODO
+  }
 }
-
 /**
  * A strike is a critical hit if the attack value is at least
  * 10 greater than the target's armor class (AC).
