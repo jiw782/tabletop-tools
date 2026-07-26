@@ -70,7 +70,13 @@ function doesStrikeCrit(attack, ac) {
  * @returns {number} total hit points after healing
  */
 function heal(maxHp, currentHp, healAmount) {
-  // TODO
+  //let totalHP = currentHp + healAmount;
+  //if (totalHP <= maxHp) {
+  //return totalHP;
+  //} else {
+  // return maxHp;
+  //}
+  return Math.min(maxHp, currentHp + healAmount);
 }
 
 /**
@@ -90,7 +96,15 @@ function heal(maxHp, currentHp, healAmount) {
  * @returns {number} the character's proficiency bonus
  */
 function getProficiencyBonus(level, rank) {
-  // TODO
+  const bonuses = {
+    untrained: 0,
+    trained: level + 2,
+    expert: level + 4,
+    master: level + 6,
+    legendary: level + 8,
+  };
+
+  return bonuses[rank];
 }
 
 /**
